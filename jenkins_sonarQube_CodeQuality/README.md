@@ -3,6 +3,8 @@
 
 #### Pre-requisites:
 - A sonarQube server running (``Mine is running in a local virtual machine at *192.168.38.152:9000*`` )
+
+    ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/pre-sonar.png)
 - A Jenkins server running at (**192.168.38.90:8082** )
 
 
@@ -11,7 +13,7 @@
 1. We need a user token of the Sonarqube server , and for this case we use the admin of our server.
 2. So on the SonarQube server, by going to ``Administration > Security > Users `` and select the admin user for token generation .
 
-![](sonar-token)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s2-sonar-token.png)
     
     `` Copy the token because we will provide this to Jenkins for integration. ``
 
@@ -21,20 +23,22 @@
 #### 1. Install the SonarQube plugin
     
 - By going to ``Dashborad > Manage Jenkins > Plugin Manager > Available plugins `` and  search for *Sonarqube Scanner* 
-![s1-plugin]()
+![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s1-plugin.png)
 
 #### 2. Configuring the SonarQube credentials for the installed plugin 
 
 - 2.1 *Configure the sonarQube server and token for Jenkins*
     - We have to provide the location of sonarqube server for jenkins.So we have to go to `` Dahsboard > Manage Jenkins > Configure System ``: 
         * Now provide a *Name* for sonarqube installation
-        * The server URl
-        * And server authentication Token (`the Token configured for the user of sonarqube server`)
-            ![servver auth]() 
+        * The server URL
+        * And server authentication Token (`The Token configured for the user of sonarqube server`)
+        ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s4-adding-sonar-token.png)
         * And save.
+    - Review final : 
+        ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonar-serverNew.png )
 
 - 2.2  *Install the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
-![](sonar-scanner)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s3-config-sonar.png)
 
 
 ### Step 3: Run a Job for SonarQube Analysis :
@@ -47,12 +51,15 @@
 - 3.3 Apply and Save .
 
 - 3.5 After pipeline execution, we can see on the console output the SonarQube URL is given to access the Analysis report .
-![out1]()
-![out2]()
+![out1](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out1.png)
+
+![out2](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out2.png)
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/dashb-pipelin.png)
 
 ### Viewing the result on SonarQube Dashboard server 
 With the url given on the console output , we see :
-![reviewcode]()
+![reviewcode](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonarQ-reviewcode.png)
 
 
 
