@@ -1,0 +1,29 @@
+pipeline {
+    agent any 
+    envrionment {
+        PATH = "$PATH:/usr/share/maven/bin" //On my local Jenkins maven is installed there.
+    }
+    stages {
+        stage (' Retrieving Code from GitHub') {
+            steps {
+                echo '<--------- Starting pulling the code -------------->'
+                git 'https://github.com/Tcarters/HelloSpringJenkins.git'
+                echo '<------------Code pulling ended---------------------->'
+            }
+        }
+        stage (' BUilding the package ') {
+            steps {
+                echo '<---------------Building Started-------------->'
+                sh 'mvn clean package '
+            }
+        }
+        stage ('SonarQube Analysis') {
+            // def scannerHome = tool 'SonnarScanner 4.8' ; No need because we setup an automatically install of this tool
+            steps {
+                withSonarQubeEnv('sonarqubeServer9.1') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
+    }
+}
