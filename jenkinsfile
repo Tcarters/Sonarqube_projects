@@ -1,6 +1,6 @@
 pipeline {
     agent any 
-    envrionment {
+    environment {
         PATH = "$PATH:/usr/share/maven/bin" //On my local Jenkins maven is installed there.
     }
     stages {
@@ -11,7 +11,7 @@ pipeline {
                 echo '<------------Code pulling ended---------------------->'
             }
         }
-        stage (' BUilding the package ') {
+        stage (' Building the package ') {
             steps {
                 echo '<---------------Building Started-------------->'
                 sh 'mvn clean package '
