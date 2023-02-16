@@ -1,9 +1,9 @@
-# Integration of Sonarqube in Jenkins server with CodeQuality Review
+## Integration of Sonarqube in Jenkins server with CodeQuality Review
 
 
-## Pre-requisites:
-- A sonarQube server running (**Mine is running in a local virtual machine at 192.168.38.152:9000** )
-- A Jenkins server running (**Mine is running in a local virtual machine at 192.168.38.90:8082** )
+#### Pre-requisites:
+- A sonarQube server running (``Mine is running in a local virtual machine at *192.168.38.152:9000*`` )
+- A Jenkins server running at (**192.168.38.90:8082** )
 
 
 ### Step 1: Configuration on SonarQube server:
