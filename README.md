@@ -1,6 +1,6 @@
-# Basics Configurations of SonarQube for Jenkins
+## 🚀 Learning SonarQube Tool Integration with Jenkins CI/CD  
 
-## What is SonarQube ?
+### What is SonarQube ?
 
 - SonarQube is an Open Source web based tool to manage code Quality and Code Analysis. It is most widely used in continuous code inspection which performs reviews of code to detect bugs, code smells and vulnearibilty issue of programming languages such as PHP, C#, JavaScript, C/C++ and Java.
 - It also tracks statistics and creates charts that enable developers to quickly identify problems in their code.
@@ -9,7 +9,7 @@
 - SonaQube makes sure our codebase is clean and maintainable, to increase developer velocity...
 
 
-## SonarQube Features
+### SonarQube Features
 - It's Open Source.
 - Code Coverage
 - Enhance dev Workflow with Continuous Code Quality & Code Security.
@@ -22,7 +22,7 @@
 ```
 
 
-## Why  PostgreSQL ?
+### Why  PostgreSQL ?
 - PostgreSQL is an Open Source and powerfull object-relational database.
 - The relational database is the most common type of database in use.
 - PostgreSQL has very good performance and very much reliable.
@@ -30,7 +30,7 @@
 - PostgreSQL is complet ACID (Atomicity - Consistency - Isolation and Durability ) , compliant .
 
 
-## What is Sonar Scanner ?
+### What is Sonar Scanner ?
 
 > With SonarQube  Scanner or sonar-scanner, we can : 
 >    -  performs the code Analysis, 
@@ -39,7 +39,7 @@
 >  SonarQube is a genric CLI scanner, and we must provide configurations that list the locations of the source files, test files, SonarQube  host and URL with a domain name.   
 
 
-## How can we Integrate sonarQube with Jenkins using Maven Job ?
+### How can we Integrate sonarQube with Jenkins using Maven Job ?
 
 - Installation & Configuration of PostgreSQL
 - Installation & Configuration of SonarQube
