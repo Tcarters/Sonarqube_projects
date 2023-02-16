@@ -41,13 +41,13 @@
 
 ## How can we Integrate sonarQube with Jenkins using Maven Job ?
 
-- Installation & COnfiguration of PostgreSQL
-- Installation & COnfiguration of SonarQube
-- Installation & COnfiguration of  Sonar Scanners.
-- Installation & COnfiguration of SonarQube SCANNER PLUGIN to integrate Jekins with SonarQube
+- Installation & Configuration of PostgreSQL
+- Installation & Configuration of SonarQube
+- Installation & Configuration of  Sonar Scanners.
+- Installation & Configuration of SonarQube SCANNER Plugin to integrate Jekins with SonarQube
 - Adding SonarQube tool
 - Generating token for Jenkins.
 - Configuring SonarQube Server
-- Changing URL in POM.xml
+<!-- - Changing URL in POM.xml --->
 - Creating new Maven Job
 - Adding analysis properties and goal.
