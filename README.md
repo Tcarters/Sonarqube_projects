@@ -48,6 +48,12 @@
 - Adding SonarQube tool
 - Generating token for Jenkins.
 - Configuring SonarQube Server
-<!-- - Changing URL in POM.xml --->
 - Creating new Maven Job
 - Adding analysis properties and goal.
+
+
+## SonarQube Quality Gates Feature 
+- Quality Gates in SonarQube is a set of conditions that must be met in order for a project to be marked  as **passed**. 
+-  Basically Quality Gates enforces the **Quality Policy** for an application through some conditions defined in the policy and then this will prevent us to deploy an application containing some bugs or vulnerabilities ...   
+### SonarQube Quality Gates working
+![](pic to be added )

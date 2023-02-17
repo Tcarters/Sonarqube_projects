@@ -35,7 +35,7 @@
     - Review final : 
         ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonar-serverNew.png )
 
-- 2.2  *Install the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
+- 2.2  *Adding the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s3-config-sonar.png)
 
 
