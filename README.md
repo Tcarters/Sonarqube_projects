@@ -57,3 +57,5 @@
 -  Basically Quality Gates enforces the **Quality Policy** for an application through some conditions defined in the policy and then this will prevent us to deploy an application containing some bugs or vulnerabilities ...   
 ### SonarQube Quality Gates working
 ![](pic to be added )
+
+## Mini project with SonarQube
