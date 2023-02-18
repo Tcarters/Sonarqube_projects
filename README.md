@@ -58,4 +58,4 @@
 ### SonarQube Quality Gates working
 ![](pic to be added )
 
-## Mini project with SonarQube
+### Mini project with SonarQube
