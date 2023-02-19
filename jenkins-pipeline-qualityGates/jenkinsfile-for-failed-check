@@ -1,0 +1,50 @@
+pipeline {
+    agent any 
+    environment {
+        PATH = "$PATH:/usr/share/maven/bin" //On my local Jenkins maven is installed there.
+    }
+    stages {
+        stage (' Clone Code from GitHub') {
+            steps {
+                echo '<--------- Starting pulling the code -------------->'
+                //git 'https://github.com/SonarSource/sonar-scanning-examples.git'
+                // git branch: 'bad-code', url: 'https://github.com/tkgregory/sonarqube-jacoco-code-coverage.git'
+                git 'https://github.com/shazforiot/GOL.git'
+                //git 'https://github.com/Tcarters/SpringBootApp_and_DevOps.git'
+                //git'https://github.com/Tcarters/HelloSpringJenkins.git'
+                echo '<------------Code pulling ended---------------------->'
+            }
+        }
+        
+    stage('Compile'){
+        steps{
+            sh 'mvn compile'
+      }
+    } 
+    stage ('Sample SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('sonarqubeServer9.1') {
+                    sh 'mvn sonar:sonar' 
+                }
+            }
+    }
+    stage ('Quality Gates Analysis') {
+            steps {
+                script {
+                    echo '<---------------Quality Gates Analysis Starting-------------->'                    
+                    //waitForQualityGate abortPipeline: true
+                    timeout (time: 5) { 
+                        
+                                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                                    // true = set pipeline to UNSTABLE, false = don't
+                        def myqualitygate = waitForQualityGate() //abortPipeline: true   // Reuse taskId previously collected by withSonarQubeEnv
+                        if ( myqualitygate.status != 'OK' ) {
+                            error "Pipeline aborted due to Quality Gate failure 🎃: ${myqualitygate.status}"
+                        }
+                    }
+                } // end script
+           } // end steps
+        } // end stage
+    }// end stages
+}
+
