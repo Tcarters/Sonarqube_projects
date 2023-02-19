@@ -1,5 +1,6 @@
 ## 🧲 Integration of Sonarqube in Jenkins server with CodeQuality Review
 
+In this small project, we will see how to Integrate the Tool **Quality Code Analyser** to a Jenkins server and run a sample pipeline from Jenkins which will provide our GitHub code to SonarQube for Analys. 
 
 #### Pre-requisites:
 - A sonarQube server running (``Mine is running in a local virtual machine at `` *192.168.38.152:9000*  )
@@ -43,12 +44,12 @@
 
 - 3.1 Create a new  pipeline Job  named `sonarqubePipeline`
 
-- 3.2 After nothing to do , jump to pipeline section where we have to define our pipeline execution. We followed this pipeline script at :https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkinsfile  
+- 3.2 After nothing to do , jump to pipeline section where we have to define our pipeline execution. We followed this pipeline script at: https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkinsfile  
 
 ![]()
-- 3.3 Apply and Save .
+- 3.3 Apply and Save.
+- 3.5 After pipeline execution, we can see on the console output the SonarQube URL is given to access the Analysis report.
 
-- 3.5 After pipeline execution, we can see on the console output the SonarQube URL is given to access the Analysis report .
 ![out1](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out1.png)
 
 ![out2](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out2.png)
@@ -56,9 +57,10 @@
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/dashb-pipelin.png)
 
 ### Viewing the result on SonarQube Dashboard server 
-With the url given on the console output , we see :
+With the url given on the console output , we see:
 ![reviewcode](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonarQ-reviewcode.png)
 
 
+In the next project we will see how to setup a Quality Gate in SonarQube and integrate it with Jenkins.
 
 ##### Our Integration is done 🤸 ... Time to take a Coffee 💥💥 !!! HAPPY LEARNING !!!! 
