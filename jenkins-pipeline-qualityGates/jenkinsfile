@@ -1,0 +1,42 @@
+pipeline {
+    agent any 
+    environment {
+        PATH = "$PATH:/usr/share/maven/bin" //On my local Jenkins maven is installed there.
+    }
+    stages {
+        stage (' Clone Code from GitHub') {
+            steps {
+                echo '<--------- Starting pulling the code -------------->'
+                git 'https://github.com/SonarSource/sonar-scanning-examples'
+                //'https://github.com/Tcarters/HelloSpringJenkins.git'
+                echo '<------------Code pulling ended---------------------->'
+            }
+        }
+        stage ('Sample SonarQube Analysis') {
+            // def scannerHome = tool 'SonnarScanner 4.8' ; No need because we setup an automatically install of this tool
+            steps {
+                withSonarQubeEnv('sonarqubeServer9.1') {
+                    sh 'mvn sonar:sonar'
+                    // or can use sh ' mvn clean package sonar:sonar '
+                }
+            }
+        }
+        stage ('Quality Gates Analysis') {
+            steps {
+                echo '<---------------Quality Gates Analysis Starting-------------->'
+                timeout (time: 3) { // Just in case something goes wrong, pipeline will be killed after a timeout
+                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    def myqualitygate = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+                    if ( myqualitygate.status != 'OK' ) {
+                        error "Pipeline aborted due to Quality Gate failure 🎃: ${myqualitygate.status}"
+                    }
+                    else {
+                            error "Pipeline  succeeded with Quality Gate 🤗 : ${myqualitygate.status}"
+                    }
+                }
+            }
+        }
+    }
+}
+
