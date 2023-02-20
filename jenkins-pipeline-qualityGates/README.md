@@ -21,16 +21,24 @@
 ## Create a custom Quality gate in SonarQube Server :
 
 - To create a quality gate condition, we go to: ``SonarQube Dashboard > Quality Gates > `` 
+
 ![defaultqg](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/defaultqg.png)
 
 - Click on the button, `` Create`` to create a new 
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/nameQG.png)
+
 - After give a name for the new quality Gate
 - Now add a Condition :
     - Select  ``On New Code`` for new project that will be integrated to sonar
     - After we choose as metrics `` Bugs`` and ``Vulnerabilities, Major Issues , Critical Issues `` 
     - And after click ``Add Condition ``
-    - ![cond-QG]
+
+    ![cond](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/qG-metric1.png)
+
 - Finally , set the new Quality gate as `` Default ``
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/customQG.png)
 
 ## Configure a webhook in sonarQube server :
 
@@ -38,8 +46,10 @@
 - To configure it we will go on SonarQube Dashboard : ``Administration > Configuration > Webhooks ``
     * Now give a `` Name `` of the new webhook
     * Put the URL of the ``Jenkins server `` + the important part ``sonarqube-webhook/ `` 
-![s6-webhook]()
-![s6-webhook2]()
+
+![s6-webhook](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/s6-webhookjenk.png)
+
+![s6-webhook2](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/s6-webhook2.png)
 
 
 ## Configuration of Jenkins Server:
@@ -47,7 +57,7 @@
 - 2.1 Install the SonarQube Scanner plugin 
     - By going to ``Dashborad > Manage Jenkins > Plugin Manager > Available plugins `` and  search for *Sonarqube Scanner for Jenkins*. After select , install without restart.
 
-![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s1-plugin.png)
+![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s1-plugin.png)
 
 - 2.2 Configure the sonar server properties 
     - We go to `` Dahsboard > Manage Jenkins > Configure System `` , and look for the Section `` SonarQube servers``: 
@@ -55,22 +65,23 @@
         * The server URL `` http://ip:9000``
         * And Server Authentication Token (`The Token configured earlier for the user of sonarqube server`)
 
-        ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s4-adding-sonar-token.png)
+        ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s4-adding-sonar-token.png)
      
         * And save.
     
     - Review final : 
-        ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonar-serverNew.png )
+        ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_[pipeline_sonarQube/Screenshots/sonar-serverNew.png )
     
 - 2.3 Add the SonarQube Scanner plugin     
     - Following the path `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
 
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s3-config-sonar.png)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s3-config-sonar.png)
 
 
 - 2.4 Now, add the sonarQube properties
     - We need **sonar-project.properties** to configure Sonar with a specific application. This part is required when we have a big projects with lots of dependencies and we want some specific check for our application.
-    - The configuration for the `` Required metadata`` will be :
+
+    - The configuration for the `` Required metadata`` will be:
 
         ```
         sonar.projectKey=repo-name  # It can be anything or your project name..
@@ -91,7 +102,7 @@
 
 - Create a new sample pipeline job
 
-    ![img-job]()
+    ![img-job](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/qg-job1.png)
 
 - Jump directly to the section ``Pipeline`` and define a pipeline script like the on used :
 
@@ -143,13 +154,26 @@ pipeline {
 
 ### Result 
 - we can see that our pipeline executing aborted due to our defined timeout reached , and we have to mentionned that Quality Gate work like a condition meaning that after scanning the code received from Jenkins if the result is OK then the pipeline proceeed in next steps but if the scanning report an error like bugs, vulnerabilities then the pipeline will be failed with a retry in the timeout defined.
-![res1]()
+![res1](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res1-qg.png)
+
 - But from our jenkins server all test passed 
-- So feel free to change the timeout and github repo code in Jenkins script pipeline to deal better with SonarQube scanner
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res2-qg.png)
+
+- Feel free to change the timeout and github repo code in Jenkins script pipeline to deal better with SonarQube scanner.
 
 ### Check for a failed condition from sonarqube server 
 - For that, create another pipeline `projectQG2` with a different git repo, we see here also our Qualitty chek pass:
 
 - And change our custom Quality gate condition 
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res3-qg-condt.png)
+
 - Use the jenkins script defined in the file `` jenkinsfile-for-failed-check ``
-![resQG-failed]()
+
+- On the SonarQube server, we see the Analysis failed because the submitted code don't respect our condition gate
+
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-QGfailedpip.png)
+
+- On Jenkins Pipeline view Dashboard:
+![resQG-failed](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-finalQG2-failed.png)
