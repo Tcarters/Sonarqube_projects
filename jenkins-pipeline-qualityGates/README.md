@@ -1,6 +1,6 @@
 # Using SonarQube Quality gates to our Jenkins build pipeline
 
-##### Scenarios :
+### Scenarios:
 - Create a custom Quality Gates
 - Integrate with Jenkins 
 - Test cases with policy defined in our Quality Gates feature
@@ -14,14 +14,14 @@
 - 1. To allow Jenkins to connect to the SonarQube Server, we have to provide the SonarQube Server token to Jenkins. And in our case we have a default user **admin**, so let's grave his token. `` In real case production for security purpose, provide the token of a standard user``. 
 - 2. So on the SonarQube server, by going to ``Administration > Security > Users `` and select the admin user for token generation .
 
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s2-sonar-token.png)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s2-sonar-token.png)
     
     `` Copy the token because we will provide this to Jenkins for integration. ``
 
 ## Create a custom Quality gate in SonarQube Server :
 
 - To create a quality gate condition, we go to: ``SonarQube Dashboard > Quality Gates > `` 
-![defaultqg]()
+![defaultqg](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/defaultqg.png)
 
 - Click on the button, `` Create`` to create a new 
 - After give a name for the new quality Gate

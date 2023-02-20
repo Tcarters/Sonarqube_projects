@@ -56,6 +56,6 @@
 - Quality Gates in SonarQube is a set of conditions that must be met in order for a project to be marked  as **passed**. 
 -  Basically Quality Gates enforces the **Quality Policy** for an application through some conditions defined in the policy and then this will prevent us to deploy an application containing some bugs or vulnerabilities ...   
 ### SonarQube Quality Gates working
-![](pic to be added )
-
-### Mini project with SonarQube
+<!-- /* ![](pic to be added ) */ -->
+ 
+### Minor Projects with SonarQube
