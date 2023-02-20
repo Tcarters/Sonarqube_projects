@@ -1,10 +1,11 @@
 ## 🧲 Integration of Sonarqube in Jenkins server with CodeQuality Review
 
-In this small project, we will see how to Integrate the Tool **Quality Code Analyser** to a Jenkins server and run a sample pipeline from Jenkins which will provide our GitHub code to SonarQube for Analys. 
+In this small project, we will see how to Integrate the Tool **SonarQube Quality Code Analyser** to a Jenkins server and run a sample pipeline from Jenkins which will provide our GitHub code to SonarQube for Analysis. 
 
 #### Pre-requisites:
 - A sonarQube server running (``Mine is running in a local virtual machine at `` *192.168.38.152:9000*  )
 - A Jenkins server running at (*192.168.38.90:8082* )
+- A GitHub repo Code for Analysis.
 
 
 ### Step 1: Configuration on SonarQube server:
@@ -12,7 +13,7 @@ In this small project, we will see how to Integrate the Tool **Quality Code Anal
 1. We need a user token of the Sonarqube server , and for this case we use the admin of our server.
 2. So on the SonarQube server, by going to ``Administration > Security > Users `` and select the admin user for token generation .
 
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s2-sonar-token.png)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_SonarQube/Screenshots/s2-sonar-token.png)
     
     `` Copy the token because we will provide this to Jenkins for integration. ``
 

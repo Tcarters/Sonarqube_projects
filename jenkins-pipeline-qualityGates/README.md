@@ -1,8 +1,7 @@
 # Using SonarQube Quality gates to our Jenkins build pipeline
 
-### Scenarios :
+##### Scenarios :
 - Create a custom Quality Gates
-- Or use a Default QUality Gates
 - Integrate with Jenkins 
 - Test cases with policy defined in our Quality Gates feature
 
