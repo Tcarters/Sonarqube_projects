@@ -13,7 +13,7 @@ In this small project, we will see how to Integrate the Tool **SonarQube Quality
 1. We need a user token of the Sonarqube server , and for this case we use the admin of our server.
 2. So on the SonarQube server, by going to ``Administration > Security > Users `` and select the admin user for token generation .
 
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_SonarQube/Screenshots/s2-sonar-token.png)
+![getTopken](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s2-sonar-token.png)
     
     `` Copy the token because we will provide this to Jenkins for integration. ``
 
