@@ -44,8 +44,10 @@ Now let's see some configuration to be done on the Jenkins Server..
 
         ![servver auth](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/sonar-serverNew.png)
 
+        :exclamation: :exclamation: Depending on the Version of SonarQube , sometimes we got `` API error ``  the server URL on the above configuration should be ``http://ip:9000 ``  , without the slash ( **/** ) at the end. So in case you get error while runnning the pipeline, review this part.
+
 - 2.2  *Adding the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s3-config-sonar.png)
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s3-config-sonar.png)
 
 
 ### Step 3: Run a Job for SonarQube Analysis :
