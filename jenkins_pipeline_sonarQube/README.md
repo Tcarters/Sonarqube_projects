@@ -44,9 +44,10 @@ Now let's see some configuration to be done on the Jenkins Server..
 
         ![servver auth](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/sonar-serverNew.png)
 
-        :exclamation: :exclamation: Depending on the Version of SonarQube , sometimes we got `` API error ``  the server URL on the above configuration should be ``http://ip:9000 ``  , without the slash ( **/** ) at the end. So in case you get error while runnning the pipeline, review this part.
+        :exclamation: :exclamation: Depending on the Version of SonarQube , sometimes we got **`` API error ``** the server URL on the above configuration should be ``http://ip:9000 ``  , without the slash **( / )** at the end. So in case you get error while runnning the pipeline, review this part.
 
 - 2.2  *Adding the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
+
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s3-config-sonar.png)
 
 
@@ -54,21 +55,24 @@ Now let's see some configuration to be done on the Jenkins Server..
 
 - 3.1 Create a new  pipeline Job  named `sonarqubePipeline`
 
-- 3.2 After nothing to do , jump to pipeline section where we have to define our pipeline execution. We followed this pipeline script at: https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkinsfile  
-
-![]()
+- 3.2 After nothing to do , jump to pipeline section where we have to define our pipeline execution. We followed this pipeline script at: https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/jenkinsfile  
 - 3.3 Apply and Save.
+
+![newPipeline](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/pipe-build.png)
+
 - 3.5 After pipeline execution, we can see on the console output the SonarQube URL is given to access the Analysis report.
 
-![out1](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out1.png)
+![out1](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/consol-out1.png)
 
-![out2](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/consol-out2.png)
+![out2](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/consol-out2.png)
 
-![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/dashb-pipelin.png)
+- Final Pipeline view after execution:
+
+![dashboard](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/dashb-pipelin.png)
 
 ### Viewing the result on SonarQube Dashboard server 
 With the url given on the console output , we see:
-![reviewcode](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonarQ-reviewcode.png)
+![reviewcode](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/sonarQ-reviewcode.png)
 
 
 In the next project we will see how to setup a Quality Gate in SonarQube and integrate it with Jenkins.
