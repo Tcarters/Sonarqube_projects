@@ -24,8 +24,10 @@ Now let's see some configuration to be done on the Jenkins Server..
 
 #### 1. Install the SonarQube plugin
     
-- By going to ``Dashborad > Manage Jenkins > Plugin Manager > Available plugins `` and  search for *Sonarqube Scanner* 
+- By going to ``Dashborad > Manage Jenkins > Plugin Manager > Available plugins `` and  search for *Sonarqube Scanner* :
+
 ![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s1-plugin.png)
+
 #### 2. Configuring the SonarQube credentials for the installed plugin 
 
 - 2.1 *Configure the sonarQube server and token for Jenkins*
@@ -33,10 +35,14 @@ Now let's see some configuration to be done on the Jenkins Server..
         * Now provide a *Name* for sonarqube installation
         * The server URL
         * And server authentication Token (`The Token configured for the user of sonarqube server`)
-        ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s4-adding-sonar-token.png)
+
+        ![addingToken](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s4-adding-sonar-token.png)
+        
         * And save.
+
     - Review final : 
-        ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/sonar-serverNew.png )
+
+        ![servver auth](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/sonar-serverNew.png)
 
 - 2.2  *Adding the sonarQube Scanner for Jenkins*  by going to `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s3-config-sonar.png)
