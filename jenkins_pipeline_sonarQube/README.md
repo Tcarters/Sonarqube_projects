@@ -2,6 +2,8 @@
 
 In this small project, we will see how to Integrate the Tool **SonarQube Quality Code Analyser** to a Jenkins server and run a sample pipeline from Jenkins which will provide our GitHub code to SonarQube for Analysis. 
 
+![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/cover.png)
+
 #### Pre-requisites:
 - A sonarQube server running (``Mine is running in a local virtual machine at `` *192.168.38.152:9000*  )
 - A Jenkins server running at (*192.168.38.90:8082* )
