@@ -20,11 +20,12 @@ In this small project, we will see how to Integrate the Tool **SonarQube Quality
 
 ### Step 2: Configuration on the Jenkins server:
 
+Now let's see some configuration to be done on the Jenkins Server..
+
 #### 1. Install the SonarQube plugin
     
 - By going to ``Dashborad > Manage Jenkins > Plugin Manager > Available plugins `` and  search for *Sonarqube Scanner* 
-![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_sonarQube_CodeQuality/Screenshots/s1-plugin.png)
-
+![s1-plugin](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/s1-plugin.png)
 #### 2. Configuring the SonarQube credentials for the installed plugin 
 
 - 2.1 *Configure the sonarQube server and token for Jenkins*
