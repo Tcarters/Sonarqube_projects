@@ -70,7 +70,7 @@
         * And save.
     
     - Review final : 
-        ![servver auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_[pipeline_sonarQube/Screenshots/sonar-serverNew.png )
+        ![server auth]( https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins_pipeline_sonarQube/Screenshots/sonar-serverNew.png )
     
 - 2.3 Add the SonarQube Scanner plugin     
     - Following the path `` Dahsboard > Manage Jenkins > Global Tool Configuration ``, and search for Section `` SonarQube Scanner ``.
@@ -160,7 +160,7 @@ pipeline {
 
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res2-qg.png)
 
-- Feel free to change the timeout and github repo code in Jenkins script pipeline to deal better with SonarQube scanner.
+- :exclamation: :exclamation: Feel free to change the timeout and github repo code in Jenkins script pipeline to deal better with SonarQube scanner.
 
 ### Check for a failed condition from sonarqube server 
 - For that, create another pipeline `projectQG2` with a different git repo, we see here also our Qualitty chek pass:
@@ -171,9 +171,13 @@ pipeline {
 
 - Use the jenkins script defined in the file `` jenkinsfile-for-failed-check ``
 
-- On the SonarQube server, we see the Analysis failed because the submitted code don't respect our condition gate
+- On the SonarQube server, we see the Analysis failed because the submitted code doesn't respect our defined Quality Gate Condition.
 
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-QGfailedpip.png)
 
 - On Jenkins Pipeline view Dashboard:
+
 ![resQG-failed](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-finalQG2-failed.png)
+
+
+Tadaaa, we're Done with this Integration ...
