@@ -176,6 +176,8 @@ pipeline {
 ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-QGfailedpip.png)
 
 - On Jenkins Pipeline view Dashboard:
+    - On the Console Output of build pipelne :
+    ![](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/failureproject2-sonar.png)
 
 ![resQG-failed](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-finalQG2-failed.png)
 
