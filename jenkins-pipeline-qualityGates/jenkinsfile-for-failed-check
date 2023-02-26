@@ -33,10 +33,10 @@ pipeline {
                         
                                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                                     // true = set pipeline to UNSTABLE, false = don't
-                        def myqualitygate = waitForQualityGate() //abortPipeline: true   // Reuse taskId previously collected by withSonarQubeEnv
-                        def myqualitygate = waitForQualityGate false
+                        //def myqualitygate = waitForQualityGate() //abortPipeline: true   // Reuse taskId previously collected by withSonarQubeEnv
+                        def myqualitygate = waitForQualityGate true
                         if ( myqualitygate.status != 'OK' ) {
-                            error "Pipeline aborted due to Quality Gate failure 🎃: ${myqualitygate.status}"
+                            echo "Pipeline aborted due to Quality Gate failure 🎃: ${myqualitygate.status}"
                         }
                     }
                 } // end script
