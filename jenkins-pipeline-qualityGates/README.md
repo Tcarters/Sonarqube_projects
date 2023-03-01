@@ -1,8 +1,8 @@
-# Using SonarQube Quality gates to our Jenkins build pipeline
+# Integration of SonarQube Quality Gates Checking in a Jenkins pipeline
 
 Let's see in this mini project how to implement sonarQube Quality Gates conditions in a Jenkins pipeline Job.
 
-<img src="https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/Quality-Gates_Uses-cases.jpg" width ="45%" height="50%"/>
+<img src="https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/Quality-Gates_Uses-cases.jpg" width ="100%" height="120%"/>
 
 ### Scenarios:
 - Create a custom Quality Gate condition
@@ -10,10 +10,10 @@ Let's see in this mini project how to implement sonarQube Quality Gates conditio
 - Integrate with Jenkins with SonarQube Server
 - Create a Job and implement 2 cases test (*Passed & Failed*) for the Defined Quality Gate Condition.
 
-### Pre-requisites:
-- A Jenkins Server running in a Single Machine
-- Another machine running SonarQube Server 
-- A GitHub repository 
+### Setup Required:
+- A Jenkins Server running in a Single Machine. Here it's at (**192.168.38.90:8082**)
+- A second machine running SonarQube Server. Here it's at (**192.168.38.152:9000**) 
+- An Application code available in GitHub repository: https://github.com/Tcarters/HelloSpringJenkins
 
 - - -
 ## Step 1:  Configuration of SonarQube Server:
