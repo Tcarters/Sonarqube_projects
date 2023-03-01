@@ -198,4 +198,4 @@ pipeline {
 ![resQG-failed](https://github.com/Tcarters/Sonarqube_projects/blob/master/jenkins-pipeline-qualityGates/Screenshots/res-finalQG2-failed.png)
 
 
-### Tadaaa, we're Done with this Integration ...
+### Tadaaa, we're Done with this Integration ... THANKS
